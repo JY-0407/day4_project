@@ -330,38 +330,6 @@ def profile():
     else:
         return redirect(url_for('login'))
 
-
-
-
-# @app.route('/regist', methods=['GET', 'POST'])
-
-# def regist():
-#     if request.method == 'POST':
-#         userid = request.form['id']
-#         userpw = request.form['pw']
-
-#         conn = connectsql()
-#         cursor = conn.cursor()
-#         query = "SELECT * FROM tbl_user WHERE user_name = %s"
-#         value = userid
-#         cursor.execute(query, value)
-#         data = (cursor.fetchall())
-#         #import pdb; pdb.set_trace()
-#         if data:
-#             conn.rollback() # 이건 안 써도 될 듯
-#             return render_template('registError.html') 
-#         else:
-#             query = "INSERT INTO tbl_user (user_name, user_password) values (%s, %s)"
-#             value = (userid, userpw)
-#             cursor.execute(query, value)
-#             data = cursor.fetchall()
-#             conn.commit()
-#             return render_template('registSuccess.html')
-#         cursor.close()
-#         conn.close()
-#     else:
-#         return render_template('regist.html')        
-
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
