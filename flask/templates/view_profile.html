@@ -1,0 +1,32 @@
+<!-- templates/view_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <title>회원 프로필</title>
+    <style>
+        .profile-img {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>회원 프로필</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{ user.profile_image }}" alt="Profile Image" class="profile-img">
+            </div>
+            <div class="col-md-9">
+                <p><strong>이름:</strong> {{ user.name }}</p>
+                <p><strong>이메일:</strong> {{ user.email }}</p>
+                <p><strong>학교:</strong> {{ user.school }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

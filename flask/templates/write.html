@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>글 작성 페이지</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head> 
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li>접속자 : <strong>{{logininfo}}</strong> 님</li> 
+                </ul>
+            </nav>
+            <h3 class="text-muted">게시판 글 작성</h3>
+        </div>
+        <section>
+            <form class="form-horizontal" method="post" action="/write" enctype="multipart/form-data">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>글 작성</legend>
+                    <!-- 제목 입력 -->
+                    <div class="form-group">
+                        <label class="col-md-12" for="txtTitle">제목</label>
+                        <div class="col-md-12">
+                            <input id="txtTitle" name="title" type="text" placeholder="제목을 입력하세요." class="form-control input-md" autofocus required>
+                        </div>
+                    </div>
+                    <!-- 내용 입력 -->
+                    <div class="form-group">
+                        <label class="col-md-12" for="txtPost">내용</label>
+                        <div class="col-md-12">
+                            <textarea class="form-control" id="txtPost" name="content" placeholder="내용을 입력하세요." style="height:260px;" required></textarea>
+                        </div>
+                    </div>
+                    <!-- 비밀번호 입력 (선택) -->
+                    <div class="form-group">
+                        <label class="col-md-12" for="txtPassword">비밀번호 (선택)</label>
+                        <div class="col-md-12">
+                            <input id="txtPassword" name="password" type="password" placeholder="비밀번호 (선택)" class="form-control input-md">
+                        </div>
+                    </div>
+                    <!-- 파일 업로드 -->
+                    <div class="form-group">
+                        <label class="col-md-12" for="fileUpload">파일 업로드</label>
+                        <div class="col-md-12">
+                            <input id="fileUpload" name="file" type="file" class="form-control input-md">
+                        </div>
+                    </div>
+                    <!-- 버튼 -->
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="singlebutton"></label>
+                        <div class="col-md-12">
+                            <input id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit" value="작성하기">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- templates/edit_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxinum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <title>정보 수정</title>
+</head>
+<body>
+    <div class="container">
+        <h2>정보 수정</h2>
+        <form method="POST" action="/edit_profile">
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ user.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ user.email }}" required>
+            </div>
+            <div class="form-group">
+                <label for="school">학교</label>
+                <input type="text" id="school" name="school" class="form-control" value="{{ user.school }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">수정하기</button>
+        </form>
+    </div>
+</body>
+</html>
